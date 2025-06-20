@@ -20,7 +20,6 @@ test('Add to Cart', async ({ page }) => {
         for (let product in listProducts) {
             for (let i = 1; i <= listProducts[product].quantity; i++) {
                 await page.locator('//div[text()="' + listProducts[product].name + '"]//following-sibling::button[text()="Add to Cart"]').click();
-                // có cách nào move cái for này ra ngoài test để làm thành 1 function ko ?
             }
         }
     });
