@@ -13,9 +13,12 @@ test("Test With POM", async ({ page }) => {
     await test.step("Fill information Register", async () => {
         await Register.fillUsername("phamquank16");
         await Register.fillEmail("phamquan@gmail.com");
-        await Register.SetGender();
-        await Register.fillHobbies();
-        await Register.fillCountry("usa");
+        await Register.checkGender("Male");
+        await Register.checkHobbies("traveling");
+        await Register.selectCountry("usa");
+        await Register.selectInterests("music");
+        await Register.fillBio("No comments");
+        await Register.checkNewsLetter();
         await Register.fillDayOfBirth("2025-03-15");
         await Register.chooseFile('test-data/hinh-anh-cute-avatar-vo-tri-3.jpg');
     })
